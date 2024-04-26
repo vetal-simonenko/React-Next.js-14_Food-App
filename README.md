@@ -1,3 +1,5 @@
+## React/Next.js FoodApp pet project
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`npx create-next-app@latest`]
 
 ## Getting Started
