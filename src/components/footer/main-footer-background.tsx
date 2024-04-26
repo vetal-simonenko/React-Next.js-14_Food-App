@@ -1,8 +1,8 @@
-import classes from './main-header-background.module.css';
+import classes from './main-footer-background.module.css';
 
-const MainHeaderBackground = () => {
+const MainFooterBackground = () => {
 	return (
-		<div className={classes['header-background']}>
+		<div className={classes['footer-background']}>
 			<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'>
 				<defs>
 					<linearGradient
@@ -37,4 +37,4 @@ const MainHeaderBackground = () => {
 	);
 };
 
-export default MainHeaderBackground;
+export default MainFooterBackground;

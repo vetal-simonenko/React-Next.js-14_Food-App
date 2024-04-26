@@ -1,9 +1,20 @@
 import Link from 'next/link';
 import Image from 'next/image';
-
 import classes from './meal-item.module.css';
 
-export default function MealItem({ title, slug, image, summary, creator }) {
+const MealItem = ({
+	title,
+	slug,
+	image,
+	summary,
+	creator,
+}: {
+	title: string;
+	slug: string;
+	image: string;
+	summary: string;
+	creator: string;
+}) => {
 	return (
 		<article className={classes.meal}>
 			<header>
@@ -23,4 +34,6 @@ export default function MealItem({ title, slug, image, summary, creator }) {
 			</div>
 		</article>
 	);
-}
+};
+
+export default MealItem;

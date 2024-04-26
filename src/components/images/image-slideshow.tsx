@@ -22,7 +22,7 @@ const images = [
 	{ image: tomatoSaladImg, alt: 'A delicious tomato salad' },
 ];
 
-export default function ImageSlideShow() {
+const ImageSlideShow = () => {
 	const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
 	useEffect(() => {
@@ -49,4 +49,6 @@ export default function ImageSlideShow() {
 			))}
 		</div>
 	);
-}
+};
+
+export default ImageSlideShow;
