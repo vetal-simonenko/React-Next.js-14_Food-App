@@ -1,6 +1,7 @@
 import ImagePicker from '@/components/image-picker/image-picker';
 import classes from './page.module.css';
 import { shareMeal } from '../../../../lib/actions';
+import MealsFormSubmit from '@/components/meals-form-submit/meals-form-submit';
 
 const ShareMealPage = () => {
 	return (
@@ -13,6 +14,7 @@ const ShareMealPage = () => {
 				<p>Or any other meal you feel needs sharing!</p>
 			</div>
 			<div className={classes.main}>
+				{/* TODO: This form need JS validation! */}
 				<form className={classes.form} action={shareMeal}>
 					<div className={classes.row}>
 						<p>
@@ -53,7 +55,7 @@ const ShareMealPage = () => {
 					</p>
 					<ImagePicker label='Your meal' name='image' />
 					<p className={classes.actions}>
-						<button type='submit'>Share Meal</button>
+						<MealsFormSubmit />
 					</p>
 				</form>
 			</div>
