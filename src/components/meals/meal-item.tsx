@@ -1,20 +1,9 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import classes from './meal-item.module.css';
+import { Meal } from '../../../lib/definitions';
 
-const MealItem = ({
-	title,
-	slug,
-	image,
-	summary,
-	creator,
-}: {
-	title: string;
-	slug: string;
-	image: string;
-	summary: string;
-	creator: string;
-}) => {
+const MealItem = ({ title, slug, image, summary, creator }: Meal) => {
 	return (
 		<article className={classes.meal}>
 			<header>

@@ -3,21 +3,30 @@ import { S3 } from '@aws-sdk/client-s3';
 import sql from 'better-sqlite3';
 import slugify from 'slugify';
 import xss from 'xss';
+import { Meal } from './definitions';
 
 const s3 = new S3({
 	region: 'eu-central-1',
 });
 const db = sql('meals.db');
 
-export const getMeals = async () => {
-	return db.prepare('SELECT * FROM meals').all();
+export const getMeals = async (): Promise<Meal[]> => {
+	const mealsRows = db.prepare('SELECT * FROM meals').all();
+	if (mealsRows.length === 0) {
+		throw new Error('Meals not found');
+	}
+	return mealsRows as Meal[];
 };
 
-export const getMeal = async (slug: string) => {
-	return db.prepare('SELECT * FROM meals WHERE slug = ?').get(slug);
+export const getMeal = async (slug: string): Promise<Meal> => {
+	const mealRow = db.prepare('SELECT * FROM meals WHERE slug = ?').get(slug);
+	if (!mealRow) {
+		throw new Error('Meal not found');
+	}
+	return mealRow as Meal;
 };
 
-export const saveMeal = async (meal: any) => {
+export const saveMeal = async (meal: Meal | any) => {
 	meal.slug = slugify(meal.title, { lower: true });
 	meal.instructions = xss(meal.instructions);
 

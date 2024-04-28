@@ -8,7 +8,7 @@ export async function generateMetadata({
 }: {
 	params: { mealSlug: string };
 }) {
-	const meal: any = await getMeal(params.mealSlug);
+	const meal = await getMeal(params.mealSlug);
 
 	return {
 		title: meal.title,
@@ -17,7 +17,7 @@ export async function generateMetadata({
 }
 
 const MealDetailPage = async ({ params }: { params: { mealSlug: string } }) => {
-	const meal: any = await getMeal(params.mealSlug);
+	const meal = await getMeal(params.mealSlug);
 
 	if (!meal) {
 		notFound();
