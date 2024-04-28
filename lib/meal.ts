@@ -1,4 +1,3 @@
-import fs from 'node:fs';
 import { S3 } from '@aws-sdk/client-s3';
 
 import sql from 'better-sqlite3';
