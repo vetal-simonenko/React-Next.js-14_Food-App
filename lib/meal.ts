@@ -10,18 +10,14 @@ const s3 = new S3({
 const db = sql('meals.db');
 
 export const getMeals = async () => {
-	await new Promise((resolve) => setTimeout(resolve, 1000));
-
 	return db.prepare('SELECT * FROM meals').all();
 };
 
 export const getMeal = async (slug: string) => {
-	await new Promise((resolve) => setTimeout(resolve, 1000));
-
 	return db.prepare('SELECT * FROM meals WHERE slug = ?').get(slug);
 };
 
-export const saveMeal = async (meal: any) => {
+export const saveMeal = async (meal: Meal) => {
 	meal.slug = slugify(meal.title, { lower: true });
 	meal.instructions = xss(meal.instructions);
 
