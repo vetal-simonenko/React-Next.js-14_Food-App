@@ -17,7 +17,7 @@ export const getMeal = async (slug: string) => {
 	return db.prepare('SELECT * FROM meals WHERE slug = ?').get(slug);
 };
 
-export const saveMeal = async (meal: Meal) => {
+export const saveMeal = async (meal: any) => {
 	meal.slug = slugify(meal.title, { lower: true });
 	meal.instructions = xss(meal.instructions);
 
