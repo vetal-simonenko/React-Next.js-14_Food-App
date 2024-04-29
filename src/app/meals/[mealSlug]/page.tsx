@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import classes from './page.module.css';
-import { getMeal } from '../../../../lib/meal';
+import { getMeal } from '../../../lib/meal';
 import { notFound } from 'next/navigation';
 
 export async function generateMetadata({

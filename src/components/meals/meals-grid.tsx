@@ -1,6 +1,6 @@
 import classes from './meals-grid.module.css';
 import MealItem from '@/components/meals/meal-item';
-import { Meal } from '../../../lib/definitions';
+import { Meal } from '../../lib/definitions';
 
 const MealsGrid = ({ meals }: { meals: Meal[] }) => {
 	return (

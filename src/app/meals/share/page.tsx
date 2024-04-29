@@ -1,6 +1,6 @@
 import ImagePicker from '@/components/image-picker/image-picker';
 import classes from './page.module.css';
-import { shareMeal } from '../../../../lib/actions';
+import { shareMeal } from '../../../lib/actions';
 import MealsFormSubmit from '@/components/meals-form-submit/meals-form-submit';
 
 const ShareMealPage = () => {

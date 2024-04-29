@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import classes from './meal-item.module.css';
-import { Meal } from '../../../lib/definitions';
+import { Meal } from '../../lib/definitions';
 
 const MealItem = ({ title, slug, image, summary, creator }: Meal) => {
 	return (
